@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:neucalculator/calculator.dart';
+import 'package:neucalculator/logic/provider_model.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,10 +13,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'NeuCalculator',
-      home: Calculator(),
+    // The material app is wrapped with ChangeNotifierProvider from Provider package
+
+    return ChangeNotifierProvider(
+      //The ProviderModel class we creates is now registered using create param
+      create: (context) => ProviderModel(),
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'NeuCalculator',
+        home: Calculator(),
+      ),
     );
   }
 }

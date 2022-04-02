@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:neucalculator/neu_widgets/neu_key.dart';
+import 'package:neucalculator/widgets/neu_key.dart';
 
 class NeuKeypad extends StatelessWidget {
   const NeuKeypad({Key? key}) : super(key: key);

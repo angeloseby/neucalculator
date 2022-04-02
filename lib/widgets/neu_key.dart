@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:neucalculator/logic/provider_model.dart';
+import 'package:provider/provider.dart';
 
 class NeuKey extends StatefulWidget {
   const NeuKey({Key? key, required this.keytext}) : super(key: key);
@@ -14,6 +16,8 @@ class _NeuKeyState extends State<NeuKey> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTapDown: (details) {
+        Provider.of<ProviderModel>(context, listen: false)
+            .onClick(val: widget.keytext);
         setState(() {
           bottomShadow = Colors.grey.shade300;
         });

@@ -17,14 +17,10 @@ class Calculator extends StatelessWidget {
           child: Stack(
             children: [
               Column(
-                children: [
-                  NeuDisplay(
-                    textop: text,
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const NeuKeypad(),
+                children: const [
+                  NeuDisplay(),
+                  SizedBox(height: 20),
+                  NeuKeypad(),
                 ],
               ),
               const Positioned(
